@@ -79,7 +79,7 @@ static char imageURLStorageKey;
                 completedBlock(image, error, cacheType, url);
                 return;
             }
-            else if (image) {
+            else if (image && !(options & SDWebImageAvoidAutoSetImage)) {
                 [sself setImage:image forState:state];
             }
             if (completedBlock && finished) {
